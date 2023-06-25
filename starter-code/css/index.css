@@ -1,0 +1,68 @@
+body {
+	background-image: url(../assets/home/background-home-desktop.jpg);
+	display: grid;
+	grid-template-rows: auto 1fr;
+}
+
+main {
+	padding: clamp(.5rem, 12vw, 10.5rem);
+}
+
+article {
+	display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    justify-items: end;
+}
+
+.intro {
+	display: grid;
+	gap: 1.5rem;
+}
+
+button.explore {
+	width: 274px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background-color: var(--clr-white);
+	transition: box-shadow 200ms ease-in-out;
+}
+
+button.explore:hover {
+	box-shadow: 0 0 0 5rem rgb(255 255 255 / .25);
+}
+
+
+@media (max-width: 1048px) {
+	body {
+		background-image: url(../assets/home/background-home-tablet.jpg);
+	}
+	.hr {
+		display: none;
+	}
+	article {
+		grid-template-columns: auto;
+		justify-items: center;
+		height: 100%;
+		align-content: space-around;
+		
+	}
+	ul.navigation > li::before {
+		display: none;
+	}
+	button.explore {
+		width: 242px;
+	}
+	button.explore:hover {
+		box-shadow: 0 0 0 4rem rgb(255 255 255 / .25);
+	}
+	main {
+		padding-block: 0;
+	}
+	.intro {
+		justify-items: center;
+	}
+	p {
+		text-align: center;
+	}
+}
