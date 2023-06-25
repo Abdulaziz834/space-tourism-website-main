@@ -13,6 +13,10 @@
 	--fs-subheading-2: 0.875rem;
 	--fs-nav-text: 1rem;
 	--fs-body-text: 1.125rem;
+
+	/* paddings */
+
+	--pdg-nav-block: 2.5rem
 }
 
 
@@ -35,6 +39,7 @@ body {
 
 img, object, picture {
 	display: block;
+	pointer-events: none;
 }
 
 
@@ -112,6 +117,7 @@ ul, ol {
 
 .nav-text {
 	font-size: var(--fs-nav-text);
+	letter-spacing: 2.7px;
 }
 
 p {
@@ -121,8 +127,8 @@ p {
 
 
 nav {
-	padding-block: 2.5rem;
-	padding-left: 3.8vw;
+	padding-block: var(--pdg-nav-block);
+	padding-left: var(--pdg-nav-block);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -147,12 +153,11 @@ ul.navigation {
     z-index: 1;
 }
 
-ul.navigation > li {
+:where(ul.navigation > .nav-text) {
 	counter-increment: navigation-counter;
 	display: flex;
 	gap: 0.875rem;
 	font-size: var(--fs-nav-text);
-	letter-spacing: 2.7px;
 	padding-block: 2.375rem;
 	background-image: linear-gradient(to right, currentColor, currentColor);
 	background-repeat: no-repeat;
@@ -161,16 +166,16 @@ ul.navigation > li {
 	transition: background-size 200ms ease-in-out;
 }
 
-ul.navigation > li:not(.active):hover {
+ul.navigation > .nav-text:not(.active):hover {
 	background-size: 100% 3px;
 	background-image: linear-gradient(to right, color-mix(in lab, transparent 50%, currentColor), color-mix(in lab, transparent 50%, currentColor));
 }
 
-ul.navigation > li.active {
+ul.navigation > .nav-text.active {
 	background-size: 100% 3px;
 }
 
-ul.navigation > li::before {
+ul.navigation > .nav-text::before {
 	content: "0" counter(navigation-counter);
 	font-weight: bold;
 }

@@ -16,19 +16,25 @@
 
 	<link rel="stylesheet" href="./css/main.css">
 	<link rel="stylesheet" href="./css/index.css">
+
+	<script src="./script/index.js" defer></script>
 </head>
 
 <body>
 	<navbar>
 		<nav>
-			<div class="logo"><object data="./assets/shared/logo.svg" type=""></object></div>
+			<div class="logo"><object data="./assets/shared/logo.svg"></object></div>
 			<div class="hr"></div>
-			<ul class="navigation">
-				<li class="text-uppercase active"><a href="./index.html">Home</a></li>
-				<li class="text-uppercase"><a href="./destination-moon.html">Destination</a></li>
-				<li class="text-uppercase"><a href="./crew-commander.html">Crew</a></li>
-				<li class="text-uppercase"><a href="./technology-vehicle.html">Technology</a></li>
-			</ul>
+			<div class="nav-slider">
+				<button class="nav-open" onclick="this.parentElement.classList.add('opened')"><i class="hamburger"><object data="./assets/shared/icon-hamburger.svg"></object></i></button>
+				<ul class="navigation">
+					<li class="section-close"><button class="btn-close" onclick="document.querySelector('.nav-slider').classList.remove('opened')"><i class="icon-close"><object data="./assets/shared/icon-close.svg"></object></i></button></li>
+					<li class="nav-text text-uppercase active"><a href="./index.html">Home</a></li>
+					<li class="nav-text text-uppercase"><a href="./destination-moon.html">Destination</a></li>
+					<li class="nav-text text-uppercase"><a href="./crew-commander.html">Crew</a></li>
+					<li class="nav-text text-uppercase"><a href="./technology-vehicle.html">Technology</a></li>
+				</ul>
+			</div>
 		</nav>
 	</navbar>
 	<main>

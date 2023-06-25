@@ -5,7 +5,10 @@ body {
 }
 
 main {
-	padding: clamp(.5rem, 12vw, 10.5rem);
+	width: 75%;
+    margin-inline: auto;
+    display: grid;
+    place-items: center;
 }
 
 article {
@@ -34,6 +37,9 @@ button.explore:hover {
 
 
 @media (max-width: 1048px) {
+	:root {
+		--pdg-nav-block: 2rem
+	}
 	body {
 		background-image: url(../assets/home/background-home-tablet.jpg);
 	}
@@ -56,13 +62,58 @@ button.explore:hover {
 	button.explore:hover {
 		box-shadow: 0 0 0 4rem rgb(255 255 255 / .25);
 	}
-	main {
-		padding-block: 0;
-	}
 	.intro {
 		justify-items: center;
 	}
 	p {
 		text-align: center;
+	}
+}
+
+@media (max-width: 650px) {
+	:root {
+		--fs-heading-1: 5rem;
+		--fs-heading-5: 1rem;
+		--fs-body-text: 15px;
+		--fs-heading-4: 1.25rem;
+		--pdg-nav-block: 1.5rem;
+	}
+	body {
+		background-image: url(../assets/home/background-home-mobile.jpg);
+	}
+	nav {
+		padding-inline: var(--pdg-nav-block);
+	}
+	ul.navigation {
+		display: none;
+	}
+	button.explore {
+		width: 150px;
+	}
+	button.explore:hover {
+		box-shadow: 0 0 0 2rem rgb(255 255 255 / .25);
+	}
+	ul.navigation {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: -100%;
+		gap: 2rem;
+		padding-block: 2.25rem;
+		transition: right 300ms ease-in-out;
+	}
+	.nav-slider.opened > ul.navigation {
+		right: 0;
+	}
+	.nav-slider .nav-text {
+		padding: .5rem;
+	}
+	.nav-slider .nav-text::before {
+		display: block;
+	}
+	.btn-close {
+		float: right;
 	}
 }
