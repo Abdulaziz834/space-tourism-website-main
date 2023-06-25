@@ -23,6 +23,10 @@ article {
 	gap: 1.5rem;
 }
 
+.mobile {
+	display: none;
+}
+
 button.explore {
 	width: 274px;
 	aspect-ratio: 1;
@@ -102,10 +106,13 @@ button.explore:hover {
 		right: -100%;
 		gap: 2rem;
 		padding-block: 2.25rem;
-		transition: right 300ms ease-in-out;
+		visibility: hidden;
+		transition: right 550ms ease-in-out;
 	}
 	.nav-slider.opened > ul.navigation {
+		display: flex;
 		right: 0;
+		visibility: visible;
 	}
 	.nav-slider .nav-text {
 		padding: .5rem;
@@ -115,5 +122,8 @@ button.explore:hover {
 	}
 	.btn-close {
 		float: right;
+	}
+	.mobile {
+		display: block;
 	}
 }
