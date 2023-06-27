@@ -30,7 +30,7 @@ article {
 }
 
 button.explore {
-	width: 274px;
+	width: var(--btn-explore-width);
 	aspect-ratio: 1;
 	border-radius: 50%;
 	background-color: var(--clr-white);
@@ -38,7 +38,7 @@ button.explore {
 }
 
 button.explore:hover {
-	box-shadow: 0 0 0 5rem rgb(255 255 255 / .25);
+	box-shadow: 0 0 0 var(--btn-explore-shadow-offset) rgb(255 255 255 / .25);
 }
 
 
@@ -47,6 +47,8 @@ button.explore:hover {
 		--pdg-nav-block: 2rem;
 		--pdg-main-block: 6.625rem;
 		--gap-article: 9.75rem;
+		--btn-explore-width: 242px;
+		--btn-explore-shadow-offset: 4rem;
 	}
 	body {
 		background-image: url(../assets/home/background-home-tablet.jpg);
@@ -66,12 +68,6 @@ button.explore:hover {
 	ul.navigation > li::before {
 		display: none;
 	}
-	button.explore {
-		width: 242px;
-	}
-	button.explore:hover {
-		box-shadow: 0 0 0 4rem rgb(255 255 255 / .25);
-	}
 	.intro {
 		justify-items: center;
 	}
@@ -89,6 +85,8 @@ button.explore:hover {
 		--pdg-nav-block: 1.5rem;
 		--pdg-main-block: 3rem;
 		--gap-article: 5rem;
+		--btn-explore-width: 150px;
+		--btn-explore-shadow-offset: 2rem;
 	}
 	body {
 		background-image: url(../assets/home/background-home-mobile.jpg);
@@ -96,12 +94,6 @@ button.explore:hover {
 	nav {
 		padding-inline: var(--pdg-nav-block);
 		padding-block: var(--pdg-nav-block);
-	}
-	button.explore {
-		width: 150px;
-	}
-	button.explore:hover {
-		box-shadow: 0 0 0 2rem rgb(255 255 255 / .25);
 	}
 	ul.navigation {
 		display: none;
