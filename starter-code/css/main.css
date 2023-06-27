@@ -16,7 +16,8 @@
 
 	/* paddings */
 
-	--pdg-nav-block: 2.5rem
+	--pdg-nav-block: 2.5rem;
+	--pdg-main-block: 0rem;
 }
 
 
@@ -28,6 +29,7 @@ body {
 	margin: 0;
 	box-sizing: border-box;
 	background-size: cover;
+	overflow-x: hidden;
 }
 
 *, *::before, *::after {

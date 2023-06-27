@@ -9,6 +9,7 @@ main {
     margin-inline: auto;
     display: grid;
     place-items: center;
+	padding-block: var(--pdg-main-block);
 }
 
 article {
@@ -16,6 +17,7 @@ article {
     grid-template-columns: 1fr 1fr;
     align-items: end;
     justify-items: end;
+	gap: var(--gap-article);
 }
 
 .intro {
@@ -42,10 +44,15 @@ button.explore:hover {
 
 @media (max-width: 1048px) {
 	:root {
-		--pdg-nav-block: 2rem
+		--pdg-nav-block: 2rem;
+		--pdg-main-block: 6.625rem;
+		--gap-article: 9.75rem;
 	}
 	body {
 		background-image: url(../assets/home/background-home-tablet.jpg);
+	}
+	nav {
+		padding-block: 0;
 	}
 	.hr {
 		display: none;
@@ -55,7 +62,6 @@ button.explore:hover {
 		justify-items: center;
 		height: 100%;
 		align-content: space-around;
-		
 	}
 	ul.navigation > li::before {
 		display: none;
@@ -81,15 +87,15 @@ button.explore:hover {
 		--fs-body-text: 15px;
 		--fs-heading-4: 1.25rem;
 		--pdg-nav-block: 1.5rem;
+		--pdg-main-block: 3rem;
+		--gap-article: 5rem;
 	}
 	body {
 		background-image: url(../assets/home/background-home-mobile.jpg);
 	}
 	nav {
 		padding-inline: var(--pdg-nav-block);
-	}
-	ul.navigation {
-		display: none;
+		padding-block: var(--pdg-nav-block);
 	}
 	button.explore {
 		width: 150px;
@@ -98,21 +104,24 @@ button.explore:hover {
 		box-shadow: 0 0 0 2rem rgb(255 255 255 / .25);
 	}
 	ul.navigation {
-		display: flex;
+		display: none;
 		flex-direction: column;
 		position: absolute;
-		top: 0;
-		bottom: 0;
-		right: -100%;
+		inset: 0;
+		left: auto;
 		gap: 2rem;
 		padding-block: 2.25rem;
-		visibility: hidden;
-		transition: right 550ms ease-in-out;
+		translate: 100% 0;
+		transition: translate 550ms ease-in-out;
 	}
-	.nav-slider.opened > ul.navigation {
-		display: flex;
-		right: 0;
-		visibility: visible;
+	ul.navigation[closing] {
+		animation: nav-close 350ms ease-in-out forwards;
+	}
+	ul.navigation[opening] {
+		animation: nav-open 350ms ease-in-out forwards;
+	}
+	ul.navigation.opened {
+		translate: 0 0;
 	}
 	.nav-slider .nav-text {
 		padding: .5rem;
@@ -125,5 +134,24 @@ button.explore:hover {
 	}
 	.mobile {
 		display: block;
+	}
+}
+
+@keyframes nav-open {
+	from {
+		translate: 100% 0;
+	}
+	to {
+		translate: 0;
+	}
+}
+
+
+@keyframes nav-close {
+	from {
+		translate: 0;
+	}
+	to {
+		translate: 100% 0;
 	}
 }
