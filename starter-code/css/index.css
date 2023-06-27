@@ -98,7 +98,7 @@ button.explore:hover {
 	ul.navigation {
 		display: none;
 		flex-direction: column;
-		position: absolute;
+		position: fixed;
 		inset: 0;
 		left: auto;
 		gap: 2rem;
