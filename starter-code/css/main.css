@@ -8,19 +8,46 @@
 	--fs-heading-1: 9.375rem;
 	--fs-heading-2: 6.25rem;
 	--fs-heading-3: 3.5rem;	
-	--fs-heading-4: 2rem;
+	--fs-heading-4: 2rem; 
 	--fs-heading-5: 1.75rem;
+	--fs-subheading-1: 1.75rem;
 	--fs-subheading-2: 0.875rem;
 	--fs-nav-text: 1rem;
 	--fs-body-text: 1.125rem;
-
 	/* paddings */
 
 	--pdg-nav-block: 2.5rem;
 	--pdg-main-block: 0rem;
 	--gap-article: 9.75rem;
+	--btn-explore-shadow-offset: 5rem;
+
+	/* width */
 	--btn-explore-width: 274px;
-	--btn-explore-shadow-offset: 5rem
+	--planet-width: 445px;
+}
+
+@media (max-width: 1048px) {
+	:root {
+		--pdg-nav-block: 2rem;
+		--pdg-main-block: 6.625rem;
+		--gap-article: 9.75rem;
+		--btn-explore-width: 242px;
+		--btn-explore-shadow-offset: 4rem;
+	}
+}
+
+@media (max-width: 650px) {
+	:root {
+		--fs-heading-1: 5rem;
+		--fs-heading-5: 1rem;
+		--fs-body-text: 15px;
+		--fs-heading-4: 1.25rem;
+		--pdg-nav-block: 1.5rem;
+		--pdg-main-block: 3rem;
+		--gap-article: 5rem;
+		--btn-explore-width: 150px;
+		--btn-explore-shadow-offset: 2rem;
+	}
 }
 
 
@@ -113,11 +140,12 @@ ul, ol {
 
 
 .subheading-1 {
-	font-size: var(--fs-heading-5);
+	font-size: var(--fs-subheading-1);
 }
 
 .subheading-2 {
 	font-size: var(--fs-subheading-2);
+	letter-spacing: 2.362px
 }
 
 .nav-text {
@@ -150,7 +178,7 @@ ul.navigation {
 	counter-reset: navigation-counter -1;
 }
 
-.hr {
+.nav-hr {
 	width: 100%;
     height: 1px;
     background-color: var(--clr-white);
@@ -183,4 +211,158 @@ ul.navigation > .nav-text.active {
 ul.navigation > .nav-text::before {
 	content: "0" counter(navigation-counter);
 	font-weight: bold;
+}
+
+.mobile {
+	display: none;
+}
+
+.darken {
+	opacity: .25;
+}
+
+@media (max-width: 1048px) {
+	nav {
+		padding-block: 0;
+	}
+	.nav-hr {
+		display: none;
+	}
+	ul.navigation > li::before {
+		display: none;
+	}
+	p {
+		text-align: center;
+	}
+}
+
+@media (max-width: 650px) {
+	:root {
+		--fs-heading-1: 5rem;
+		--fs-heading-5: 1rem;
+		--fs-heading-2: 3.5rem;
+		--fs-body-text: 15px;
+		--fs-heading-4: 1.25rem;
+		--pdg-nav-block: 1.5rem;
+		--pdg-main-block: 3rem;
+		--gap-article: 5rem;
+		--btn-explore-width: 150px;
+		--btn-explore-shadow-offset: 2rem;
+	}
+	nav {
+		padding-inline: var(--pdg-nav-block);
+		padding-block: var(--pdg-nav-block);
+	}
+	ul.navigation {
+		display: none;
+		flex-direction: column;
+		position: fixed;
+		inset: 0 0 auto auto;
+		height: 100dvh;
+		gap: 2rem;
+		padding-block: 2.25rem;
+		translate: 100% 0;
+		transition: translate 550ms ease-in-out;
+	}
+	ul.navigation[closing] {
+		animation: nav-close 350ms ease-in-out forwards;
+	}
+	ul.navigation[opening] {
+		animation: nav-open 350ms ease-in-out forwards;
+	}
+	ul.navigation.opened {
+		translate: 0 0;
+	}
+	.nav-slider .nav-text {
+		padding: .5rem;
+	}
+	.nav-slider .nav-text::before {
+		display: block;
+	}
+	.btn-close {
+		float: right;
+	}
+	.mobile {
+		display: block;
+	}
+}
+
+@keyframes nav-open {
+	from {
+		translate: 100% 0;
+	}
+	to {
+		translate: 0;
+	}
+}
+
+
+@keyframes nav-close {
+	from {
+		translate: 0;
+	}
+	to {
+		translate: 100% 0;
+	}
+}
+
+
+.tabs {
+	display: flex;
+	gap: 2rem;
+}
+
+.tabs > .nav-text {
+	padding-block: 0.75rem;
+	background-image: linear-gradient(to right, currentColor, currentColor);
+	background-repeat: no-repeat;
+	background-position: bottom center;
+	background-size: 0% 3px;
+	transition: background-size 200ms ease-in-out, background-image 300ms linear;
+}
+
+.tabs > .nav-text:not(.active):hover {
+	background-size: 100% 3px;
+	background-image: linear-gradient(to right, color-mix(in lab, transparent 50%, currentColor), color-mix(in lab, transparent 50%, currentColor));
+}
+
+.tabs > .active {
+	background-size: 100% 3px;
+}
+
+hr.hr {
+	width: 100%;
+	height: 1px;
+	background-color: var(--clr-white);
+	opacity: .25;
+	border: none;
+}
+
+.params {
+	margin-top: 1.75rem;
+	display: flex;
+	gap: 5rem;
+}
+
+.param {
+	display: grid;
+	gap: 0.75rem;
+}
+@media (max-width: 1048px) {
+	.tabs {
+		justify-content: center;
+	}
+	.params {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 650px) {
+	.params {
+		flex-direction: column;
+		gap: 2rem;
+	}
+	.param {
+		justify-items: center;
+	}
 }

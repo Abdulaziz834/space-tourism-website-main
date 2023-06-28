@@ -43,18 +43,8 @@ button.explore:hover {
 
 
 @media (max-width: 1048px) {
-	:root {
-		--pdg-nav-block: 2rem;
-		--pdg-main-block: 6.625rem;
-		--gap-article: 9.75rem;
-		--btn-explore-width: 242px;
-		--btn-explore-shadow-offset: 4rem;
-	}
 	body {
 		background-image: url(../assets/home/background-home-tablet.jpg);
-	}
-	nav {
-		padding-block: 0;
 	}
 	.hr {
 		display: none;
@@ -64,9 +54,6 @@ button.explore:hover {
 		justify-items: center;
 		height: 100%;
 		align-content: space-around;
-	}
-	ul.navigation > li::before {
-		display: none;
 	}
 	.intro {
 		justify-items: center;
