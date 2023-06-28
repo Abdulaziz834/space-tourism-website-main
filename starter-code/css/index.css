@@ -99,8 +99,8 @@ button.explore:hover {
 		display: none;
 		flex-direction: column;
 		position: fixed;
-		inset: 0;
-		left: auto;
+		inset: 0 0 auto auto;
+		height: 100dvh;
 		gap: 2rem;
 		padding-block: 2.25rem;
 		translate: 100% 0;
