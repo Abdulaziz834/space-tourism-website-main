@@ -1,0 +1,76 @@
+body {
+	background-image: url(../assets/crew/background-crew-desktop.jpg);
+	display: grid;
+	align-content: space-between;
+	--pdg-main-block: 2.5rem;
+}
+
+main {
+	width: 80%;
+	margin-inline: auto;
+	padding-block-start: var(--pdg-main-block);
+}
+
+article {
+	display: flex;
+	gap: 5rem;
+}
+
+.person-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.person-features {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.person-img > img {
+	width: var(--img-crewmate-width);
+}
+
+
+
+@media (max-width: 1048px) {
+	:root {
+		--img-crewmate-width: 456px;
+	}
+	body {
+		background-image: url(../assets/crew/background-crew-tablet.jpg);
+	}
+	article {
+		flex-direction: column;
+	}
+	.person-info {
+		gap: 3rem;
+		justify-items: center;
+	}
+	.person-features {
+		align-items: center;
+	}
+	.person-img > img {
+		margin-inline: auto;
+	}
+}
+
+@media (max-width: 650px) {
+	:root {
+		--fs-heading-4: 1rem;
+		--img-crewmate-width: 300px;
+	}
+	body {
+		background-image: url(../assets/crew/background-crew-mobile.jpg);
+	}
+	article {
+		flex-direction: column-reverse;
+	}
+	main {
+		padding-bottom: 8rem;
+	}
+	.person-info {
+		flex-direction: column-reverse;
+	}
+}

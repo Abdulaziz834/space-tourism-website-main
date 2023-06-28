@@ -42,6 +42,9 @@ p.description {
 	:root {
 		--planet-width: 300px;
 	}
+	body {
+		background-image: url(../assets/destination/background-destination-tablet.jpg);
+	}
 	main {
 		width: 90%;
 	}
@@ -51,9 +54,6 @@ p.description {
 	}
 	.moon-img {
 		justify-items: center;
-	}
-	sub {
-		width: 100%;
 	}
 	h1.heading-2 {
 		text-align: center;
@@ -69,10 +69,10 @@ p.description {
 		--planet-width: 170px;
 		--heading-2: 3.5rem;
 	}
+	body {
+		background-image: url(../assets/destination/background-destination-mobile.jpg);
+	}
 	p.description {
 		padding-inline: 0rem;
-	}
-	sub {
-		width: auto;
 	}
 }

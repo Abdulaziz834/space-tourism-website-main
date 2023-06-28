@@ -10,6 +10,7 @@ main {
     display: grid;
     place-items: center;
 	padding-block: var(--pdg-main-block);
+	
 }
 
 article {

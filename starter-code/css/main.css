@@ -14,16 +14,17 @@
 	--fs-subheading-2: 0.875rem;
 	--fs-nav-text: 1rem;
 	--fs-body-text: 1.125rem;
-	/* paddings */
+	/* paddings 3.5 */
 
 	--pdg-nav-block: 2.5rem;
-	--pdg-main-block: 0rem;
+	--pdg-main-block: 6rem;
 	--gap-article: 9.75rem;
 	--btn-explore-shadow-offset: 5rem;
 
 	/* width */
 	--btn-explore-width: 274px;
 	--planet-width: 445px;
+	--img-crewmate-width: auto;
 }
 
 @media (max-width: 1048px) {
@@ -40,6 +41,7 @@
 	:root {
 		--fs-heading-1: 5rem;
 		--fs-heading-5: 1rem;
+		--fs-heading-3: 1.5rem;
 		--fs-body-text: 15px;
 		--fs-heading-4: 1.25rem;
 		--pdg-nav-block: 1.5rem;
@@ -217,7 +219,11 @@ ul.navigation > .nav-text::before {
 	display: none;
 }
 
-.darken {
+.darken-1 {
+	opacity: .5;
+}
+
+.darken-2 {
 	opacity: .25;
 }
 
@@ -355,6 +361,10 @@ hr.hr {
 	.params {
 		justify-content: center;
 	}
+	sub.subtitle {
+		display: block;
+		margin-block-end: 4rem;
+	}
 }
 
 @media (max-width: 650px) {
@@ -365,4 +375,34 @@ hr.hr {
 	.param {
 		justify-items: center;
 	}
+	sub.subtitle {
+		text-align: center;
+	}
+}
+
+
+ul.dot-slider {
+	display: flex;
+	gap: 1.5rem;
+}
+
+ul.dot-slider a {
+	display: block;
+	width: 15px;
+	aspect-ratio: 1;
+	background-color: white;
+	border-radius: 50%;
+}
+
+ul.dot-slider a {
+	display: block;
+	width: 15px;
+	aspect-ratio: 1;
+	background-color: white;
+	border-radius: 50%;
+	opacity: .175;
+}
+
+li.slider-option.active > a {
+	opacity: 1;
 }
